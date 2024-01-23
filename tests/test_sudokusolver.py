@@ -1,4 +1,4 @@
-from sudokusolver import sudoku, getEasy, getExpert, getHard, getMaster, getMedium
+from sudoku import sudoku, getEasy, getExpert, getHard, getMaster, getMedium
 import pytest
 
 def test_sudoku():
