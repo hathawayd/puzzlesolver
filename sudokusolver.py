@@ -75,6 +75,10 @@ class sudoku:
                         values.remove(self.__rows[i][j])
                     except ValueError:
                         pass
+        if (not self.__rows[i][j]) and (len(values) > 1):
+            self.__guesses[i][j] = values
+        else:
+            self.__guesses[i][j] = None
         return values
     
     def _checkNegativeValue(self, x: int,y: int, value: int) -> bool:
@@ -160,7 +164,7 @@ class sudoku:
             self._solveByNegativeEliminationLoop()
             if self.isSolved():
                 return self.isCorrect()
-            self._populateHints()
+            #self._populateHints()
             found1 = self._pruneHints()
             found2 = self._pruneHints()
 
